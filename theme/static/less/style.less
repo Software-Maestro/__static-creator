@@ -1,0 +1,179 @@
+html, body, div {
+  font-size: 17px;
+  line-height: 19px;
+  color: #6a6a6a;
+}
+
+body {
+  padding-top: 20px;
+}
+
+div#wrap {
+  @width: 960px;
+  width: @width;
+  max-width: @width;
+  margin: 0 auto;
+}
+
+div.pure-menu a {
+  color: #444444;
+}
+
+ul.menu {
+  float: right;
+}
+
+a {
+  color: #5881c3;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.btn-small {
+  font-size: .7em;
+}
+
+div.content {
+  margin-top: 20px;
+  padding: 0 20px;
+
+  .desc {
+    font-size: 14px;
+    line-height: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    p {
+      margin: 5px 0;
+
+      img {
+        float: right;
+      }
+    }
+
+    ul {
+      margin: 20px 0;
+      padding: 0 0 0 20px;
+      li {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .category {
+    height: 28px;
+    overflow: hidden;
+    margin: 0 0 5px 0;
+  }
+
+  .members {
+    margin-top: 20px;
+    word-spacing: -1;
+
+    // for central aligning
+    width: 970px;
+    margin-left: -5px;
+
+    .member {
+      @height: 60px;
+      @tags-height: 30px;
+      width: 290px;
+      height: @height+@tags-height;
+      margin: 5px;
+
+      border: 1px solid #eee;
+      border-color: #eeeeee #dddddd #bbbbbb #dddddd;
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, .14) 0 1px 3px;
+
+      padding: 5px;
+      position: relative;
+
+      > div {
+        margin: 0 0 0 @height;
+      }
+
+      .thumb {
+        width: @height;
+        height: @height;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+
+        border-radius: 3px 0 0 3px;
+      }
+
+      div.header {
+        overflow: hidden;
+        display: block;
+        position: relative;
+        padding: 0 0 0 5px;
+        margin-bottom: 5px;
+
+        h1 {
+          margin: 0;
+          font-size: 17px;
+          line-height: 20px;
+        }
+
+        h3 {
+          margin: 0;
+          font-size: 14px;
+          line-height: 17px;
+          font-weight: normal;
+
+          a {
+            color: #bbbbbb;
+          }
+        }
+      }
+
+      div.icons {
+        padding: 0 0 0 5px;
+        font-size: 18px;
+        line-height: 20px;
+
+        a {
+          color: #9a9a9a;
+        }
+
+        .fa-fw {
+          width: 1em;
+        }
+      }
+
+      div.tags {
+        margin: 3px 0 0 0;
+        height: @tags-height;
+      }
+    }
+  }
+}
+
+div.to-be-continued {
+  margin-top: 40px;
+  padding: 0 20px;
+  position: relative;
+
+  > hr {
+    display: inline-block;
+    background-color: #eee;
+    color: #eee;
+    width: 100%;
+  }
+
+  > span {
+    font-size: 14px;
+    position: absolute;
+    display: block;
+    width: 130px;
+    text-align: center;
+    top:0;
+    left:50%;
+    margin-left: -65px;
+    background: #ffffff;
+  }
+}
