@@ -1,0 +1,38 @@
+language: python
+
+python:
+- '2.7'
+
+env:
+  global:
+    - secure: CU+YhmmRwmLs5+d5zoQXRl5tN/SI5VzlTAnMFQGUVfPsGUJoUVwV5G27qCkz4otRsE2TOWxCiISbQCv/nJubDwe9bHl0qHEqWijY3UpKYOObAhaT5XLdlaRZChbin6gtGSJT7rPxGx+8hjzT4BK0guitskgDF0coL5L7C/jXK1I=
+
+before_install:
+  - git config --global user.email "jaeyoung@monodiary.net"
+  - git config --global user.name "Travis"
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - git clone --depth 5 --quite https://${GH_TOKEN}@github.com/Software-Maestro/__theme.git theme
+  - git clone --depth 5 --quite https://${GH_TOKEN}@github.com/Software-Maestro/Members.git member
+  - git clone --depth 5 --quite https://${GH_TOKEN}@github.com/Software-Maestro/software-maestro.github.io.git output
+  - python generator.py
+  - cp -r theme/static/* output/static/
+  - cp -r theme/images/* output/images/
+
+after_success:
+  - cd output
+  - git add -f .
+  - git commit -a -m "Renew site contents"
+  - git push https://${GH_TOKEN}@github.com/Software-Maestro/software-maestro.github.io.git master --quiet
+
+branches:
+  only:
+    - master
+
+notifications:
+  email: false
+  irc:
+    - "irc.ozinger.org#freyja"
