@@ -1,22 +1,6 @@
-<html>
-<head>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/1.5.25/jquery.isotope.min.js"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.4.2/pure-min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="static/css/style.css"/>
-</head>
-<body>
-<div id="wrap">
-    <div class="pure-menu pure-menu-open pure-menu-horizontal">
-        <a href="/" class="pure-menu-heading">Software_Maestro_</a>
-        <ul class="menu">
-            <li><a href="/mentor.html">Mentor</a></li>
-            <li class="pure-menu-selected"><a href="/mentee.html">Mentee</a></li>
-        </ul>
-    </div>
-
-    <div class="content">
+{% extends "layout.html" %}
+{% set menu_active = 'mentee' %}
+{% block content %}
         <div class="desc">
             <p>Mentee of software maestro.</p>
             <p>
@@ -56,12 +40,10 @@
                 </div>
             {% endfor %}
         </div>
-    </div>
-
+{% endblock %}
+{% block external %}
     <div class="to-be-continued">
         <hr/>
         <span>to be continued</span>
     </div>
-</div>
-</body>
-</html>
+{% endblock %}

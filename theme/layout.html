@@ -1,0 +1,32 @@
+<html>
+<head>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/1.5.25/jquery.isotope.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.4.2/pure-min.css">
+    <link rel="stylesheet" href="static/css/style.css"/>
+</head>
+<body>
+<div id="wrap">
+    <div class="pure-menu pure-menu-open pure-menu-horizontal">
+        <a href="/" class="pure-menu-heading">Software_Maestro_</a>
+        <ul class="menu">
+            {% set menu_list = [
+                ('/mentor.html', 'mentor', 'Mentor'),
+                ('/mentee.html', 'mentee', 'Mentee'),
+            ] -%}
+            {% for href, id, text in menu_list %}
+                <li {% if menu_active == id %}class="pure-menu-selected"{% endif %}><a href="{{ href|e }}">{{ text|e }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    {% block external %}
+    {% endblock %}
+</div>
+</body>
+</html>
