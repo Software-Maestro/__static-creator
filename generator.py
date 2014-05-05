@@ -6,7 +6,7 @@ from os import listdir
 from os.path import join, isfile, isdir
 import codecs
 
-from jinja2 import Template, FileSystemLoader, Environment
+from jinja2 import FileSystemLoader, Environment
 env = Environment(loader=FileSystemLoader(searchpath='theme/'))
 
 
@@ -22,8 +22,7 @@ def get_mentee():
                 if isfile(mentee_path):
                     config = ConfigParser()
                     config.read(mentee_path)
-                    mentee = Mentee(config=config)
-                    mentee.gen = class_name
+                    mentee = Mentee(config=config, gen=class_name)
                     mentee_list.append(mentee)
 
     print '%s mentee collected.' % len(mentee_list)

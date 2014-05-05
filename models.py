@@ -8,10 +8,11 @@ class Mentee(object):
     Member object for Mentee
     """
 
-    def __init__(self, config):
+    def __init__(self, config, gen):
         # get info
         self.name = config.get('info', 'name')
         self.birth = config.get('info', 'birth')
+        self.gen = gen
         if config.has_option('info', 'email'):
             self.email = config.get('info', 'email')
         else:
