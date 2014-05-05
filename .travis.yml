@@ -5,7 +5,7 @@ python:
 
 env:
   global:
-    - secure: CU+YhmmRwmLs5+d5zoQXRl5tN/SI5VzlTAnMFQGUVfPsGUJoUVwV5G27qCkz4otRsE2TOWxCiISbQCv/nJubDwe9bHl0qHEqWijY3UpKYOObAhaT5XLdlaRZChbin6gtGSJT7rPxGx+8hjzT4BK0guitskgDF0coL5L7C/jXK1I=
+    - secure: M7HJl8DNMKDp1OURap4Qfxsbgz0zyOt1tT7KKAjkGQgiQP/QlynVeE3h9Ek5N8EIsS8hFoycqKKKfAL3xw4PBACEwVAMIuAap+l4SFAZxkxBrrTpx65UwbOSh1MpzkhAko4bM/dyrDbdNl2Lnz5vEpOLXHXGu8PFSNVVqauV9l0=
 
 before_install:
   - git config --global user.email "jaeyoung@monodiary.net"
