@@ -1,2 +1,5 @@
 .env*
 .idea/
+output/
+member/
+board/
