@@ -15,9 +15,9 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - git clone --depth 5 --quite https://${GH_TOKEN}@github.com/Software-Maestro/__theme.git theme
-  - git clone --depth 5 --quite https://${GH_TOKEN}@github.com/Software-Maestro/Members.git member
-  - git clone --depth 5 --quite https://${GH_TOKEN}@github.com/Software-Maestro/software-maestro.github.io.git output
+  - git clone --depth 5 --quiet https://${GH_TOKEN}@github.com/Software-Maestro/__theme.git theme
+  - git clone --depth 5 --quiet https://${GH_TOKEN}@github.com/Software-Maestro/Members.git member
+  - git clone --depth 5 --quiet https://${GH_TOKEN}@github.com/Software-Maestro/software-maestro.github.io.git output
   - python generator.py
   - cp -r theme/static/* output/static/
   - cp -r theme/images/* output/images/
