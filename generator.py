@@ -39,6 +39,8 @@ def generate_html_mentee():
 
     print './output/mentee.html was generated.'
 
+    return len(mentee_list)
+
 
 def get_mentor():
     path = './member/mentor'
@@ -51,15 +53,23 @@ def get_mentor():
 def generate_html_mentor():
     mentor_list = get_mentor()
 
+    return len(mentor_list)
 
-def generate_html_index():
-    pass
+
+def generate_html_index(count):
+
+    template = env.get_template('index.html')
+
+    with codecs.open('./output/index.html', mode='w', encoding='utf-8') as fp:
+        fp.write(template.render(count=count))
+
+    print './output/index.html was generated.'
 
 
 def generate_html():
-    generate_html_index()
-    generate_html_mentee()
-    generate_html_mentor()
+    mentee_count = generate_html_mentee()
+    mentor_count = generate_html_mentor()
+    generate_html_index(mentor_count + mentee_count)
 
 
 if __name__ == '__main__':
