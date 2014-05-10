@@ -25,9 +25,9 @@ class Mentee(object):
         self.sex = config.get('info', 'sex')
 
         # get social
-        self.twitter = config.get('social', 'twitter')
-        self.facebook = config.get('social', 'facebook')
-        self.github = config.get('social', 'github')
+        socials = ['twitter', 'facebook', 'github']
+        for social in socials:
+            self.__setattr__(social, config.get('social', social) if config.has_option('social', social) else None)
 
         # validate object
         self.validate()
