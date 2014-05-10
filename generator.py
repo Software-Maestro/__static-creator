@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from models import Mentee, NotValidValueError
-from ConfigParser import RawConfigParser, ConfigParser
+from models import Mentee
+from ConfigParser import ConfigParser
 from os import listdir
 from os.path import join, isfile, isdir
 import codecs
